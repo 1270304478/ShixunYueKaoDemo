@@ -1,6 +1,7 @@
 package che.bwie.com.shixunyuekaodemo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import che.bwie.com.shixunyuekaodemo.R;
+import che.bwie.com.shixunyuekaodemo.TwoActivity;
 import che.bwie.com.shixunyuekaodemo.bean.MultiBean;
 
 /**
@@ -59,14 +61,15 @@ public class MultilActivityAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
             holder1.listItemTextview.setText(list.get(position).getTitle());
             ImageLoader.getInstance().displayImage(list.get(position).getPic_radio(),holder1.listItemImageview);
-           /* ((ViewHolder) holder).listItemImageview.setOnClickListener(new View.OnClickListener() {
+           ((ViewHolder) holder).listItemImageview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context,"点击",Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(context, TwoActivity.class);
+                    context.startActivity(intent);
 
 
                 }
-            });*/
+            });
         }
 
     }
